@@ -20,8 +20,9 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 /* 5. Improve media defaults */
+/* no cheating i made this inline hehehe */
 img, picture, video, canvas, svg {
-  display: block;
+  display: inline;
   max-width: 100%;
 }
 /* 6. Inherit fonts for form controls */
@@ -48,6 +49,194 @@ h1, h2, h3, h4, h5, h6 {
 
 /** Your CSS Below **/
 
+body{
+  display: flex;
+  justify-content: center;
+  background-color: var(--clr-white);
+  font-size: var(--font-paragraph);
+  font-family: var(--fs-base);
+  font-weight: var(--fw-regular);
+  position: relative;
+  min-height: 100vh;
+}
+
+.container{
+  display: flex;
+  flex-direction: column;
+}
+/* cards */
+.result-card{
+  background: linear-gradient(to bottom, var(--gra-lightSlateBlue), var(--gra-lightRoyalBlue));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 3rem 3rem 3rem;
+  border-radius: 0 0 2rem 2rem;
+  gap: 1rem;
+}
+
+/* circle */
+.score{
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: linear-gradient(to bottom, var(--gra-violetBlue), var(--gra-persianBlue));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: var(--clr-lightLavender);
+}
+
+.score span{
+  color: var(--clr-white);
+  font-weight: var(--fw-bold);
+  font-size: 55px;
+}
+
+.result-card h1{
+  color: var(--clr-white);
+}
+
+.result-card p{
+  text-align: center;
+  color: var(--clr-lightLavender);
+}
+
+/* h2 */
+.result-card h2{
+  color: var(--clr-lightLavender);
+  font-weight: var(--fw-bold);
+}
+
+.summary-card{
+  font-weight: var(--fw-bold);
+  padding: 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.summary-items{
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  /* gap does not work without flex note to self */
+  gap: 1rem;
+  background-color: var(--clr-white);
+
+}
+
+.items{
+  display: flex;
+  align-items: center;
+  border-radius: 0.5rem;
+  padding: 0.63rem;
+}
+
+.items img{
+  margin-right: 0.5rem;
+}
+
+.items span:nth-child(3){
+  margin-left: auto;  
+}
+
+.score-out-of {
+  color: var(--clr-lightLavender);
+}
+
+.score-value{
+  color: black;
+}
+
+.reaction{
+  background-color: hsl(0, 100%, 67%, .1);
+  color: var(--clr-lightRed);
+}
+
+.memory {
+  background-color: hsla(39, 100%, 56%, 0.1);
+  color: var(--clr-orangeYellow);
+}
+
+.verbal {
+  background-color: hsla(160, 100%, 37%, 0.1);
+  color: var(--clr-greenTeal);
+}
+
+.visual {
+  background-color: hsla(234, 85%, 45%, 0.1);
+  color: var(--clr-cobaltBlue);
+}
+
+button{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  background-color: var(--clr-darkGrayBlue);
+  border-radius: 2rem;
+  padding: 1rem 0rem;
+  cursor: pointer;
+  color: var(--clr-white);
+  font-weight: var(--fw-black);
+}
+
+button:hover {
+  background: linear-gradient(to bottom, var(--gra-lightSlateBlue), var(--gra-lightRoyalBlue));
+}
+
+@media (min-width: 768px) {
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh; 
+    background-color: var(--clr-paleBlue);
+  }
+
+  .container {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch; 
+    max-width: var(--width-desktop);
+    background-color: var(--clr-white); 
+    border-radius: 2rem; 
+    overflow: hidden;
+  }
+
+  .result-card {
+    flex: 1;
+    padding: 2rem; 
+    border-radius: 0 2rem 2rem 0;
+    
+  }
+
+  .summary-card {
+    flex: 1;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    background-color: var(--clr-white);
+  }
+}
+
+@media (max-width: 375px) {
+  .container {
+    max-width: var(--width-mobile);
+  }
+
+}
+
 /** Attribution CSS **/
 .attribution { font-size: 11px; text-align: center; }
 .attribution a { color: hsl(228, 45%, 44%); }
+.attribution{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding-top: 1rem;
+}
